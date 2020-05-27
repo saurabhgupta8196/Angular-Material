@@ -1,0 +1,70 @@
+<!-- Common dialog for both login and edit -->
+<section role="alert" class="header">
+  <h1 *ngIf="data._id" mat-dialog-title>Do you want to edit this user?</h1>
+  <h1 *ngIf="data.isSignIn" mat-dialog-title>Welcome to your Account</h1>
+  <h1 *ngIf="!data.isSignIn && !data._id" mat-dialog-title>
+    Create your Account
+  </h1>
+  <mat-dialog-content>
+    <p *ngIf="data.isSignIn">
+      Login Successful !!!
+      <span
+        >Hello <strong>{{ data.email }}</strong></span
+      >
+    </p>
+
+    <p *ngIf="!data.isSignIn && !data._id">
+      Oops !!! Login Unsuccessful.
+      <span>
+        Hello <strong>{{ data.email }}</strong
+        >.<br /><br />
+        <i>Please signup to create your account.</i>
+      </span>
+    </p>
+
+    <p *ngIf="data._id">
+      In which way you want to edit this account of
+      <strong>{{ data.firstName }} {{ data.lastName }}</strong
+      >?
+    </p>
+    <p *ngIf="data._id"><i>Please choose from below options.</i></p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="true"
+      (click)="closeDialog('component')"
+      *ngIf="data._id"
+    >
+      Edit By Component
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="true"
+      (click)="closeDialog('modal')"
+      *ngIf="data._id"
+    >
+      Edit By Model
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="true"
+      (click)="closeDialog('close')"
+      *ngIf="data._id"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="true"
+      (click)="closeDialog('close')"
+      *ngIf="!data._id"
+    >
+      Ok
+    </button>
+  </mat-dialog-actions>
+</section>

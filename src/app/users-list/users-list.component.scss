@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  margin-top: 5vh;
+
+  main {
+    display: block;
+    width: 75%;
+    margin: auto;
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    ::ng-deep .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: black !important;
+    }
+
+    table {
+      width: 100%;
+
+      .with-icon {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .header-table {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+main {
+  display: block;
+  width: 35%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+table {
+  width: 55%;
+  margin: auto;
+}
+
+.content-center {
+  text-align: end;
+}
+
+td button {
+  margin-left: 5px;
+}
+
+.mat {
+  background: black;
+}
+
+mat-error {
+  font-size: 75%;
+}
+
+.header {
+  background: black;
+  text-align: center;
+}
+
+mat-toolbar span {
+  margin: auto;
+}
+
+/deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: black;
+}
+
+/deep/
+  .mat-slide-toggle.mat-checked:not(.mat-disabled)
+  .mat-slide-toggle-thumb {
+  background-color: whitesmoke;
+}

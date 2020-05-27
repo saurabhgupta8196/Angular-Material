@@ -1,0 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.header {
+  background: black;
+  color: white;
+}
+a.active {
+  background: whitesmoke;
+  color: black;
+}

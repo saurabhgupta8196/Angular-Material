@@ -1,0 +1,113 @@
+<article role="form">
+  <header>
+    <h6 mat-dialog-title>Edit account details</h6>
+  </header>
+
+  <section>
+    <mat-dialog-content [formGroup]="form">
+      <mat-form-field [hidden]="true">
+        <input matInput formControlName="_id" />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Firstname"
+          formControlName="firstName"
+          required
+        />
+        <mat-error *ngIf="hasError('firstName', 'required')"
+          >Firstname is required!</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Lastname"
+          formControlName="lastName"
+          required
+        />
+        <mat-error *ngIf="hasError('lastName', 'required')"
+          >Lastname is required!</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [min]="minDate"
+          [max]="maxDate"
+          placeholder="Choose date of birth"
+          formControlName="dob"
+          id="dateOfBirth"
+          readonly
+          (click)="picker.open()"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div>
+        <span>Gender: </span>
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="Male">Male</mat-radio-button>&nbsp;
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" required />
+        <mat-error *ngIf="hasError('email', 'required')"
+          >Email is required!</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select formControlName="blog" placeholder="Select Blog" required>
+          <mat-option>-- Select Any --</mat-option>
+          <mat-option value="Medium">Medium</mat-option>
+          <mat-option value="Web Dev Hub">Web Dev Hub</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('blog', 'required')">
+          Please select any item!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="demo-full-width">
+        <textarea
+          formControlName="address"
+          matInput
+          placeholder="Address"
+          matTextareaAutosize
+          matAutosizeMinRows="2"
+          matAutosizeMaxRows="5"
+          required
+        ></textarea>
+        <mat-error *ngIf="hasError('blog', 'required')">
+          Please enter proper address!
+        </mat-error>
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button class="mat-raised-button" (click)="close()">Cancel</button>
+      <button
+        mat-raised-button
+        class="mat-primary"
+        color="accent"
+        [disabled]="!form.valid"
+        (click)="submitUpdate()"
+      >
+        Submit
+      </button>
+    </mat-dialog-actions>
+
+    <div class="key">
+      <span>* Required</span>
+    </div>
+  </section>
+</article>

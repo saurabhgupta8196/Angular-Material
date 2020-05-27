@@ -1,0 +1,38 @@
+:host {
+  display: block;
+
+  article {
+    width: 400px;
+    header {
+      h6 {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    mat-dialog-content {
+      display: flex;
+      flex-direction: column;
+      [hidden] {
+        display: none;
+      }
+    }
+
+    mat-dialog-actions {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 0;
+      .mat-primary {
+        background-color: white;
+      }
+      .mat-raised-button.mat-primary:not([disabled]) {
+        background: black;
+      }
+    }
+
+    .key {
+      font-size: 0.7rem;
+    }
+  }
+}

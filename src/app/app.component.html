@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar role="heading" class="header">
+  <mat-toolbar-row>
+    <span>Angular Material Form</span>
+    <span class="spacer"></span>
+    <a
+      *ngIf="showUserList"
+      mat-button
+      routerLink="/userLists"
+      routerLinkActive="active"
+      >Users</a
+    >
+    <a
+      *ngIf="!showUserList"
+      mat-button
+      routerLink="/signup"
+      routerLinkActive="active"
+      >Sign Up</a
+    >
+    <a
+      mat-button
+      routerLink="/signin"
+      routerLinkActive="active"
+      (click)="signInOut()"
+      >{{ showSignIn_SignOut }}</a
+    >
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<main>
+  <router-outlet style="margin-top: 80px;"></router-outlet>
+</main>

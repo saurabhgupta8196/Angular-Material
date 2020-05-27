@@ -1,0 +1,28 @@
+.example-container {
+  text-align: center;
+}
+
+.container {
+  width: 400px !important;
+  margin: 100px auto;
+  border: 2px solid;
+}
+
+.form-container {
+  margin: 15px;
+}
+
+.form-field {
+  display: block;
+}
+
+.header {
+  background: black;
+  margin-bottom: 25px;
+}
+
+.mat-button,
+.mat-raised-button {
+  background-color: black;
+  margin-bottom: 20px;
+}
